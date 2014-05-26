@@ -7,5 +7,6 @@
     <string name="btn_show_location">Show GPS</string>
     <string name="sendsms">Send SMS</string>
     <string name="CompassActivity">CompassActivity</string>
+    <string name="bearinglabel">Bearings:</string>
 
 </resources>
