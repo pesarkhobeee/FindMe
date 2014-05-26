@@ -1,20 +1,19 @@
 package info.pathseeker.findme;
 
 
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +29,7 @@ public class MainActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Log.i("tag", "oncreate");
 		Button savepreferences =  (Button) findViewById(R.id.btn_show_location);
 		savepreferences.setOnClickListener(new View.OnClickListener() {
 
@@ -76,7 +76,8 @@ public class MainActivity extends Activity {
 				}  
 
 			}  
-		});	
+		});
+		
 		Button sendsms =  (Button) findViewById(R.id.btn_sendsms);
 		sendsms.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -90,7 +91,23 @@ public class MainActivity extends Activity {
 			
 			
 		});
+		
+		Button bearing = (Button) findViewById(R.id.btn_showbearing);
+		bearing.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(), BearingActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
+	
+//	public void startBearing(View view) {
+//		Intent intent = new Intent(this, BearingActivity.class);
+//		Log.i("tag", "started?");
+//		
+//	}
 
 
 	@Override

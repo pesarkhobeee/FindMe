@@ -26,16 +26,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sendsms" />
-
-    <TextView
+    <Button
+        android:id="@+id/btn_showbearing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bearinglabel" />
-
-    <TextView
-        android:id="@+id/tv_bearing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="bearings" />
+        android:onClick="startBearing"
+        android:text="Show Bearing" />
 
 </LinearLayout>
